@@ -1,6 +1,6 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) { 'https://github.com/endotnick/endangered_species' }
 
 # Specify your gem's dependencies in endangered_species.gemspec
 gemspec

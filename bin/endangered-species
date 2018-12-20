@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'endangered_species'
+
+EndangeredSpecies::CLI.new.call
