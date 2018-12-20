@@ -6,12 +6,16 @@ List of animals
   ul class = 'masonry'
     li > a links
 
+Name of animal at
+  ol.breadcrumbs > li.current
+  || 
+  div.nav-fixed-page-title
+
 Description of animal at
-    div class = 'lead'
-      p
+    div.lead > p
 
 Animal stats at
-    ul class = 'list-data'
+    ul.list-data
 
 
 
