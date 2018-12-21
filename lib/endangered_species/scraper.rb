@@ -1,3 +1,4 @@
+require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
@@ -6,30 +7,30 @@ module EndangeredSpecies
   module Scraper
     def self.endangered_species
       [].tap do |animals|
-        urls.each { |url| animals << create_animal("https://www.worldwildlife.org#{url}") }
+        urls.each { |name, url| animals << create_animal(name, "https://www.worldwildlife.org#{url}") }
       end
     end
 
-    def self.create_animal(url)
-      EndangeredSpecies::Animal.new(select_animal_attributes(url))
+    def self.create_animal(name, url)
+      EndangeredSpecies::Animal.new(name: name, url: url)
     end
 
-    def self.select_animal_attributes(url)
-      doc = Nokogiri::HTML(URI.open(url))
+    def self.select_animal_attributes(animal)
+      doc = Nokogiri::HTML(URI.open(animal.url))
       attributes = {
         description: doc.css('.section-pop-inner .lead p').text
       }
       doc.css('.list-stats li').each do |stat|
         attributes[:"#{stat.css('.hdr').text.downcase.strip.tr(' ', '_')}"] = stat.css('.container').text.strip
       end
-      attributes
+      animal.assign_attributes(attributes)
     end
 
     def self.urls
-      [].tap do |links|
+      {}.tap do |links|
         Nokogiri::HTML(URI.open('https://www.worldwildlife.org/species'))
                 .css('ul.masonry li.item a')
-                .each { |item| links << item['href'] }
+                .each { |item| links[item.css('.name').text.strip.sub(/\n.+$/, '').to_s] = item['href'] }
       end
     end
   end

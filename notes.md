@@ -3,8 +3,7 @@
 scrape from worldwildlife.org/species
 
 List of animals 
-  ul class = 'masonry'
-    li > a links
+ - ul.masonry li a 
 
 Name of animal at
   ol.breadcrumbs > li.current
@@ -66,3 +65,8 @@ Animal stats at
 > exit
 
   Goodbye! 
+
+
+>scraper.endangered_species
+
+

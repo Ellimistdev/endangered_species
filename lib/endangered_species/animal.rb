@@ -5,6 +5,10 @@ module EndangeredSpecies
 
     def initialize(attributes = {})
       @attribute_names = []
+      assign_attributes(attributes)
+    end
+
+    def assign_attributes(attributes)
       self.class.assign_attribute_keys(attributes)
       assign_attribute_values(attributes)
     end

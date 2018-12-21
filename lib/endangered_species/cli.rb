@@ -27,11 +27,12 @@ module EndangeredSpecies
 
     def list_animals
       puts 'Here are the endangered species'
-      animals.each.with_index(1) { |animal, index| puts "\t#{index}. #{animal}" }
+      animals.each.with_index(1) { |animal, index| puts "\t#{index}. #{animal.name}" }
       puts "Which animal would you like more information about? (enter '1'-'#{animals.length}', or 'exit')"
     end
 
     def animal_info(num)
+      EndangeredSpecies::Scraper.select_animal_attributes(@animals[num])
       @animals[num].attribute_names.each do |attribute|
         puts "#{attribute}: #{@animals[num].send(attribute)}" unless attribute.casecmp('description').zero?
       end
