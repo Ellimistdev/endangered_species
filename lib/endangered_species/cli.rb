@@ -4,7 +4,7 @@ module EndangeredSpecies
     attr_reader :animals
 
     def call
-      @animals = EndangeredSpecies::Scraper.animals
+      @animals = EndangeredSpecies::Scraper.endangered_species
       list_animals
       menu
     end
@@ -18,7 +18,7 @@ module EndangeredSpecies
         elsif input.casecmp('list').zero?
           list_animals
         elsif input.casecmp('exit').zero?
-          puts "Goodbye!"
+          puts 'Goodbye!'
         else
           puts "Please enter either a number between 1 and #{animals.length}, 'list', or 'exit'"
         end
