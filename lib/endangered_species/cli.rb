@@ -10,18 +10,16 @@ module EndangeredSpecies
     end
 
     def menu
-      input = nil
-      while input != 'exit'
-        input = gets.chomp
-        if input.to_i > 0
-          animal_info(input.to_i - 1)
-        elsif input.casecmp('list').zero?
-          list_animals
-        elsif input.casecmp('exit').zero?
-          puts 'Goodbye!'
-        else
-          puts "Please enter either a number between 1 and #{animals.length}, 'list', or 'exit'"
-        end
+      input = gets.chomp
+      if input.to_i > 0
+        animal_info(input.to_i - 1)
+      elsif input.casecmp('list').zero?
+        list_animals
+      elsif input.casecmp('exit').zero?
+        puts 'Goodbye!'
+      else
+        puts "Please enter either a number between 1 and #{animals.length}, 'list', or 'exit'"
+        menu
       end
     end
 
@@ -29,6 +27,7 @@ module EndangeredSpecies
       puts 'Here are the endangered species'
       animals.each.with_index(1) { |animal, index| puts "\t#{index}. #{animal.name}" }
       puts "Which animal would you like more information about? (enter '1'-'#{animals.length}', or 'exit')"
+      menu
     end
 
     def animal_info(num)
