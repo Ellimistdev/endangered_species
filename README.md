@@ -1,8 +1,6 @@
 # EndangeredSpecies
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/endangered_species`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem add the `endangered-species` command to your terminal that will display information scraped from www.worldwildlife.org about the current most endangered species.
 
 ## Installation
 
@@ -21,8 +19,11 @@ Or install it yourself as:
     $ gem install endangered_species
 
 ## Usage
+From your terminal:  
 
-TODO: Write usage instructions here
+    $ endangered-species
+
+
 
 ## Development
 
