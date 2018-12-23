@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'endangered_species/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'endangered_species'
+  spec.name          = 'endangered_species_2'
   spec.version       = EndangeredSpecies::VERSION
   spec.authors       = ['endotnick']
   spec.email         = ['endotnick@gmail.com']

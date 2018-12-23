@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install endangered_species
+    $ gem install endangered_species_2
 
 ## Usage
 From your terminal:  
