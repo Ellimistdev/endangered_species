@@ -1,8 +1,10 @@
 PATH
   remote: .
   specs:
-    endangered_species (0.1.0)
+    endangered_species (1.0.0)
       nokogiri (>= 1.8)
+      rainbow (>= 3)
+      word_wrap (>= 1)
 
 GEM
   remote: https://rubygems.org/
@@ -47,6 +49,7 @@ GEM
       unicode-display_width (~> 1.4.0)
     ruby-progressbar (1.10.0)
     unicode-display_width (1.4.0)
+    word_wrap (1.0.0)
 
 PLATFORMS
   ruby

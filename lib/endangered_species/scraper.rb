@@ -1,4 +1,3 @@
-require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
@@ -17,13 +16,15 @@ module EndangeredSpecies
 
     def self.select_animal_attributes(animal)
       doc = Nokogiri::HTML(URI.open(animal.url))
-      attributes = {
-        description: doc.css('.section-pop-inner .lead p').text
-      }
-      doc.css('.list-stats li').each do |stat|
-        attributes[:"#{stat.css('.hdr').text.downcase.strip.tr(' ', '_')}"] = stat.css('.container').text.strip
+      animal.assign_attributes(scrape_attributes(doc))
+    end
+
+    def self.scrape_attributes(doc)
+      { description: doc.css('.section-pop-inner .lead p').map(&:text) }.tap do |attributes|
+        doc.css('.list-stats li').each do |stat|
+          attributes[:"#{stat.css('.hdr').text.downcase.strip.tr(' ', '_')}"] = stat.css('.container').text.strip
+        end
       end
-      animal.assign_attributes(attributes)
     end
 
     def self.urls

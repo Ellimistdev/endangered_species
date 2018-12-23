@@ -5,5 +5,4 @@ require 'endangered_species/animal'
 
 module EndangeredSpecies
   class Error < StandardError; end
-  # Your code goes here...
 end
