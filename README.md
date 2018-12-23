@@ -7,7 +7,7 @@ This gem add the `endangered-species` command to your terminal that will display
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'endangered_species'
+gem 'endangered_species_2'
 ```
 
 And then execute:
@@ -22,8 +22,6 @@ Or install it yourself as:
 From your terminal:  
 
     $ endangered-species
-
-
 
 ## Development
 
