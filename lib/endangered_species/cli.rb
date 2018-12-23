@@ -13,7 +13,7 @@ module EndangeredSpecies
 
     def menu
       input = gets.chomp.downcase
-      return animal_info_handler(input.to_i - 1) if input.to_i > 0
+      return animal_info_handler(input.to_i - 1) if input.to_i > 0 && input.to_i <= @animals.length
       return animal_list_handler if input.casecmp('list').zero?
 
       if input.casecmp('exit').zero?
