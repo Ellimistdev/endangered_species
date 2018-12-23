@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/endangered_species_2.svg)](https://badge.fury.io/rb/endangered_species_2)
 # EndangeredSpecies
 
 This gem add the `endangered-species` command to your terminal that will display information scraped from www.worldwildlife.org about the current most endangered species.
