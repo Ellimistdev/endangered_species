@@ -21,8 +21,7 @@ module EndangeredSpecies
     end
 
     def self.assign_attribute_keys(attributes)
-      attributes.keys.each do |attribute|
-        attr_accessor attribute
+      attributes.keys.each { |attribute| attr_accessor attribute }
       end
     end
   end
